@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_list.c                                    :+:      :+:    :+:   */
+/*   ft_create_elem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdavila <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 13:24:19 by rdavila           #+#    #+#             */
-/*   Updated: 2017/01/18 11:19:20 by rdavila          ###   ########.fr       */
+/*   Created: 2017/01/18 11:10:57 by rdavila           #+#    #+#             */
+/*   Updated: 2017/01/18 11:12:54 by rdavila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_list(t_list *list)
+t_list	*ft_create_elem(void *content, size_t content_size)
 {
-	int i;
+	t_list *list;
 
-	i = 1;
-	if (list)
-	{
-		while (list)
-		{
-			ft_putnbr(i);
-			ft_putstr(": ");
-			ft_putstr(list->content);
-			ft_putstr(" (");
-			ft_putnbr(list->content_size);
-			ft_putstr(")\n");
-			list = list->next;
-			i++;
-		}
-	}
+	list = (t_list *)malloc(sizeof(*list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->content_size = content_size;
+	list->next = NULL;
+	return (list);
 }

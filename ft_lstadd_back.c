@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_list.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdavila <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 13:24:19 by rdavila           #+#    #+#             */
-/*   Updated: 2017/01/18 11:19:20 by rdavila          ###   ########.fr       */
+/*   Created: 2017/01/18 11:06:09 by rdavila           #+#    #+#             */
+/*   Updated: 2017/01/18 11:10:50 by rdavila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_list(t_list *list)
+void	ft_lstadd_back(t_list *begin_list, void *content, size_t content_size)
 {
-	int i;
-
-	i = 1;
-	if (list)
-	{
-		while (list)
-		{
-			ft_putnbr(i);
-			ft_putstr(": ");
-			ft_putstr(list->content);
-			ft_putstr(" (");
-			ft_putnbr(list->content_size);
-			ft_putstr(")\n");
-			list = list->next;
-			i++;
-		}
-	}
+	while (begin_list->next)
+		begin_list = begin_list->next;
+	begin_list->next = ft_create_elem(content, content_size);
 }
