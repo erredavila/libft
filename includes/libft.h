@@ -6,7 +6,7 @@
 /*   By: rdavila <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 11:24:22 by rdavila           #+#    #+#             */
-/*   Updated: 2017/01/18 11:21:27 by rdavila          ###   ########.fr       */
+/*   Updated: 2017/01/20 15:04:47 by rdavila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_list			*ft_lstnew(const void *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
-void			ft_lstadd_back(t_list *begin_list, void *content, size_t content_size);
+void			ft_lstaddb(t_list *begin_list, void *content, size_t size);
 t_list			*ft_create_elem(void *content, size_t content_size);
 int				ft_list_size(t_list *begin_list);
 void			ft_lstiter(t_list *list, void (*f)(t_list *elem));
@@ -89,4 +89,5 @@ char			*ft_strrev(char *s);
 int				ft_num_length(size_t n);
 int				ft_count_words(const char *s, char c);
 int				ft_only_digit(const char *s);
+int				ft_tochar(char *s, char c);
 #endif

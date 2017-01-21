@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_tochar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdavila <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/10 15:23:23 by rdavila           #+#    #+#             */
-/*   Updated: 2017/01/19 14:16:17 by rdavila          ###   ########.fr       */
+/*   Created: 2017/01/20 12:08:29 by rdavila           #+#    #+#             */
+/*   Updated: 2017/01/20 12:13:34 by rdavila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+int		ft_tochar(char *s, char c)
 {
-	char *ret;
-	char *tmp;
+	int i;
 
-	if (!s1 || !s2)
-		return (NULL);
-	ret = (char *)malloc(sizeof(*ret) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!ret)
-		return (NULL);
-	tmp = ret;
-	while (*s1)
+	i = 1;
+	while (*s)
 	{
-		*tmp = *s1;
-		tmp++;
-		s1++;
+		if (*s == c)
+			return (i);
+		s++;
+		i++;
 	}
-	while (*s2)
-	{
-		*tmp = *s2;
-		tmp++;
-		s2++;
-	}
-	*tmp = '\0';
-	return (ret);
+	return (0);
 }
