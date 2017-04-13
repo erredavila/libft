@@ -6,11 +6,11 @@
 #    By: rdavila <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/09 13:18:39 by rdavila           #+#    #+#              #
-#    Updated: 2017/04/13 11:52:20 by rdavila          ###   ########.fr        #
+#    Updated: 2017/04/13 11:57:22 by rdavila          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = -I includes
 
