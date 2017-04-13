@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_num_length.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdavila <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 13:04:56 by rdavila           #+#    #+#             */
-/*   Updated: 2017/01/14 15:59:06 by rdavila          ###   ########.fr       */
+/*   Created: 2017/03/09 14:10:20 by rdavila           #+#    #+#             */
+/*   Updated: 2017/03/09 14:10:22 by rdavila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_num_length(size_t n)
+int		ft_list_size(t_list *begin_list)
 {
 	int i;
 
 	i = 0;
-	if (n == 0)
-		return (1);
-	while (n)
+	while (begin_list)
 	{
 		i++;
-		n /= 10;
+		begin_list = begin_list->next;
 	}
 	return (i);
 }

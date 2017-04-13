@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_list.c                                    :+:      :+:    :+:   */
+/*   handle_octal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdavila <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 13:24:19 by rdavila           #+#    #+#             */
-/*   Updated: 2017/01/18 11:19:20 by rdavila          ###   ########.fr       */
+/*   Created: 2017/03/24 15:38:58 by rdavila           #+#    #+#             */
+/*   Updated: 2017/04/10 11:55:32 by rdavila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_print_list(t_list *list)
+int		ft_printf_handle_octal(char c, va_list args, t_flags flags)
 {
-	int i;
+	uintmax_t	num;
+	int			len;
 
-	i = 1;
-	if (list)
-	{
-		while (list)
-		{
-			ft_putnbr(i);
-			ft_putstr(": ");
-			ft_putstr(list->content);
-			ft_putstr(" (");
-			ft_putnbr(list->content_size);
-			ft_putstr(")\n");
-			list = list->next;
-			i++;
-		}
-	}
+	if (c == 'O')
+		flags.length = l;
+	num = parse_unsigned(args, flags);
+	len = ft_num_length_base(num, "01234567");
+	if (flags.precision > len)
+		flags.prefix = 0;
+	return (ft_printf_handle_uint(num, flags, "01234567", "0"));
 }

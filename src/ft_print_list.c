@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_print_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdavila <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/08 16:13:41 by rdavila           #+#    #+#             */
-/*   Updated: 2017/01/10 17:15:18 by rdavila          ###   ########.fr       */
+/*   Created: 2017/01/12 13:24:19 by rdavila           #+#    #+#             */
+/*   Updated: 2017/03/09 14:11:18 by rdavila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_print_list(t_list *list)
 {
-	char	*s1;
-	char	*s2;
-	size_t	i;
+	int i;
 
-	i = -1;
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	if (s2 < s1)
-		while ((int)(--len) >= 0)
-			*(s1 + len) = *(s2 + len);
-	else
-		while (++i < len)
-			*(s1 + i) = *(s2 + i);
-	return (dst);
+	i = 1;
+	if (list)
+	{
+		while (list)
+		{
+			ft_putnbr(i);
+			ft_putstr(": ");
+			ft_putstr(list->content);
+			ft_putstr(" (");
+			ft_putnbr(list->content_size);
+			ft_putstr(")\n");
+			list = list->next;
+			i++;
+		}
+	}
 }
